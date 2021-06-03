@@ -36,3 +36,15 @@ export function searchRequestFailure() {
     type: "@tracks/SEARCH_REQUEST_SUCCESS"
   };
 }
+
+export function endTrack() {
+  return {
+    type: "@tracks/END_TRACK"
+  };
+}
+
+export function playTrack() {
+  return {
+    type: "@tracks/PLAY_TRACK"
+  };
+}

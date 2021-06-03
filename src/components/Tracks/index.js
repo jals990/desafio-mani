@@ -1,13 +1,19 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Alert } from 'rsuite';
+
 import logodeezer from '../../assets/logodeezer.png';
-
 import { addTrack, removeTrack } from '../../store/modules/favorites/actions';
-
+import { endTrack, playTrack } from '../../store/modules/tracks/actions';
 import { Container } from './styles';
 
 function Tracks({ tracks, option }) {
+  const endedPlay = useSelector(state => state.tracks.endedPlayTrack);
+  const playMusic = useSelector(state => state.tracks.playMusic);
+
   const dispatch = useDispatch();
+  const [currentTrack, setCurrentTrack] = useState(new Audio());
+
   const label = option === 'Add' ? '⭐️' : '🚫';
 
   function changeTrackToFavoriteList(track) {
@@ -17,6 +23,28 @@ function Tracks({ tracks, option }) {
       dispatch(removeTrack(track.id));
     }
   }
+
+  function toHearTrack(track){
+    if(!endedPlay && playMusic){
+      Alert.warning('Aguarde a prévia atual terminar');
+      return
+    }
+
+    Alert.warning(`Tocando ${track.title}`);
+    var preview = new Audio(track.preview);
+    setCurrentTrack(preview);
+    dispatch(playTrack())
+  }
+
+  useEffect(() => {
+    if(playMusic && !endedPlay){
+      currentTrack.play();
+    }
+  }, [currentTrack])
+
+  currentTrack.addEventListener("ended", function() {
+    dispatch(endTrack());
+  });
 
   return (
     <Container>
@@ -36,7 +64,7 @@ function Tracks({ tracks, option }) {
                 </div>
                 <div className="combo-btn">
                   <button type="button" onClick={() => changeTrackToFavoriteList(track)}>{label}</button>
-                  <button type="button" onClick={() => changeTrackToFavoriteList(track)}>⏯</button>
+                  <button id="audio" type="button" onClick={() => toHearTrack(track)}>⏯</button>
                   <button type="button" onClick={() => window.open(track.link)}><img src={logodeezer} alt="Ouça no Deezer"/></button>
                 </div>
               </li>
