@@ -1,7 +1,7 @@
 import { all } from "redux-saga/effects";
 
-import songs from "./songs/sagas";
+import tracks from "./tracks/sagas";
 
 export default function* rootSaga() {
-  return yield all([songs]);
+  return yield all([tracks]);
 }

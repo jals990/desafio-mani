@@ -6,7 +6,7 @@ export default (reducers) => {
     {
       key: "mani",
       storage,
-      whitelist: ["songs"],
+      whitelist: ["favorites", "tracks"],
     },
     reducers
   );

@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 
-import songs from "./songs/reducer";
+import favorites from "./favorites/reducer";
+import tracks from "./tracks/reducer";
 
 export default combineReducers({
-  songs,
+  favorites,
+  tracks,
 });

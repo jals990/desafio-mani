@@ -41,4 +41,10 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  .navigation {
+    width: 500px;  
+    height: 30px;
+    background: var(--text-title);
+  }
+
 `;
