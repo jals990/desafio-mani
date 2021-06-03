@@ -45,6 +45,7 @@ export default createGlobalStyle`
     width: 500px;  
     height: 30px;
     background: var(--text-title);
+    color: var(--white);
   }
 
 `;

@@ -7,8 +7,8 @@ import { Container } from './styles';
 
 function Tracks({ tracks, option }) {
   const dispatch = useDispatch();
-  const label = option === 'Add' ? 'Adicionar aos favoritos' : 'Remover';
-  console.tron.log(option)
+  const label = option === 'Add' ? '⭐️' : '🚫';
+
   function changeTrackToFavoriteList(track) {
     if(option === 'Add'){
       dispatch(addTrack(track));
@@ -19,19 +19,28 @@ function Tracks({ tracks, option }) {
 
   return (
     <Container>
-      {!tracks ? (
-        <strong> sem dados</strong>
-      ) : tracks?.map((track, index)  => {
-        return (
-          <ul key={index}>
-            <li>
-              <strong>{track.id}</strong>
-              <strong>{track.title}</strong>
-              <button type="button" onClick={() => changeTrackToFavoriteList(track)}>{label}</button>
-            </li>
-          </ul>
-        )
-      })}
+      <ul>
+        {!tracks || tracks.length === 0 ? (
+          <center> sem dados</center>
+        ) : tracks?.map((track, index)  => {
+          return (
+            
+              <li key={index}>
+                <img src={track.album.cover_big} alt={track.album.title} />
+                <div>
+                  <strong>{`Artista: ${track.artist.name}`}</strong>
+                  <strong>{`Música: ${track.title}`}</strong>
+                  <strong>{`Duração: ${track.duration}`}</strong>
+                </div>
+                <div className="combo-btn">
+                  <button type="button" onClick={() => changeTrackToFavoriteList(track)}>{label}</button>
+                  <button type="button" onClick={() => changeTrackToFavoriteList(track)}>⏯</button>
+                  <button type="button" onClick={() => changeTrackToFavoriteList(track)}>🔊</button>
+                </div>
+              </li>
+          )
+        })}
+      </ul>
     </Container>
   )
 }

@@ -17,8 +17,7 @@ export default function favorites(state = INITIAL_STATE, action) {
           }
           
           draft.favorites.push({
-            id: action.payload.track.id,
-            title: action.payload.track.title
+            ...action.payload.track
           });
           Alert.success('Track adicionada')
         });
