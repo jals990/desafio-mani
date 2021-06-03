@@ -30,7 +30,7 @@ export function* setTracks() {
     yield put(tracksRequestSuccess({tracks: tracks}));
 
   }catch (err) {
-    Alert.error(err.message);
+    Alert.error(err.response.data.message);
     yield put(tracksRequestFailure());
   }
 }
