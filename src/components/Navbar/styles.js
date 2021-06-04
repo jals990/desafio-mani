@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 50vw; 
-  height: 200px;
+  min-height: 200px;
   background: var(--text-title);
   display: flex;
   flex-direction: column;

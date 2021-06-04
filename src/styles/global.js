@@ -51,7 +51,8 @@ export default createGlobalStyle`
     color: var(--white);
     -webkit-box-shadow: 0 2px -14px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px -14px 0 rgba(0, 0, 0, 0.2);
-
+    position: fixed;
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
