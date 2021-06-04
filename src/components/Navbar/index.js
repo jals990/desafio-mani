@@ -1,27 +1,15 @@
-import React, { useState }  from 'react';
-import { useDispatch } from 'react-redux';
-
-import { searchRequest, tracksRequest } from '../../store/modules/tracks/actions';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
+import CustomInput from '../InputSearch';
 
-import mani from '../../assets/mani.png';
 import deezer from '../../assets/deezer.png';
+import mani from '../../assets/mani.png';
 
 import { Container } from './styles';
 
 function Navbar() {
-  const [filter, setFilter] = useState('');
-  const dispatch = useDispatch();
   const location = useLocation();
-  function handleChangeSearch(){
-    dispatch(searchRequest({ arg: filter }))
-  }
-
-  function requestTracks(){
-    setFilter('');
-    dispatch(tracksRequest())
-  }
-
+  
   return (
     <Container>
       <div>
@@ -29,19 +17,8 @@ function Navbar() {
         <img src={deezer} alt="Deezer" />
       </div>
       {location.pathname === '/favorites' ? (<hr />) : (
-        <form>
-          <input 
-            type="text" 
-            name="search"
-            placeholder="Pesquisa"
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)} 
-          />
-          <button type="button" onClick={() => handleChangeSearch()}>Pesquisar</button>
-          <button type="button" onClick={() => requestTracks()}>Limpar Pesquisa</button>
-        </form>
+        <CustomInput />
       )}
-      
     </Container>
   )
 }

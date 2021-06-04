@@ -20,7 +20,9 @@ function Home() {
       ): (
         <Tracks tracks={tracks} option={'Add'} />
       )}
-      <button className="navigation" onClick={() => history.push('/favorites')}>Músicas Favoritas</button>
+      <div className="navigation">
+        <button onClick={() => history.push('/favorites')}>Músicas Favoritas</button>
+      </div>
     </Container>
   )
 }

@@ -103,7 +103,9 @@ export const Container = styled.div`
             }
           }
 
-          
+          div {
+            margin-left: 3px;
+          }
         }
     }
   }

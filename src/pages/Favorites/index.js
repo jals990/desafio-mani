@@ -18,7 +18,9 @@ function Favorites() {
       ): (
         <Tracks tracks={tracks} option={'Remove'} />
       )}
-      <button className="navigation" onClick={() => history.push('/')}>Home</button>
+      <div className="navigation" >
+        <button onClick={() => history.push('/')}>Home</button>
+      </div>
     </Container>
   )
 }

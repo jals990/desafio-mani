@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Alert } from 'rsuite';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { FaStar } from 'react-icons/fa';
+import { IoIosRemoveCircle } from 'react-icons/io';
 
 import logodeezer from '../../assets/logodeezer.png';
 import { addTrack, removeTrack } from '../../store/modules/favorites/actions';
-import { endTrack, playTrack } from '../../store/modules/tracks/actions';
+
+import Control from '../TrackControl';
+
 import { Container } from './styles';
 
 function Tracks({ tracks, option }) {
-  const endedPlay = useSelector(state => state.tracks.endedPlayTrack);
-  const playMusic = useSelector(state => state.tracks.playMusic);
-
   const dispatch = useDispatch();
-  const [currentTrack, setCurrentTrack] = useState(new Audio());
-
-  const label = option === 'Add' ? '⭐️' : '🚫';
+  const label = option === 'Add' ? (
+    <FaStar size={18} className="svg-yellow"/>
+  ): (
+    <IoIosRemoveCircle size={18} className="svg-red"/>
+  );
 
   function changeTrackToFavoriteList(track) {
     if(option === 'Add'){
@@ -24,28 +27,6 @@ function Tracks({ tracks, option }) {
     }
   }
 
-  function toHearTrack(track){
-    if(!endedPlay && playMusic){
-      Alert.warning('Aguarde a prévia atual terminar');
-      return
-    }
-
-    Alert.warning(`Tocando ${track.title}`);
-    var preview = new Audio(track.preview);
-    setCurrentTrack(preview);
-    dispatch(playTrack())
-  }
-
-  useEffect(() => {
-    if(playMusic && !endedPlay){
-      currentTrack.play();
-    }
-  }, [currentTrack])
-
-  currentTrack.addEventListener("ended", function() {
-    dispatch(endTrack());
-  });
-
   return (
     <Container>
       <ul>
@@ -53,7 +34,6 @@ function Tracks({ tracks, option }) {
           <center> sem dados</center>
         ) : tracks?.map((track, index)  => {
           return (
-            
               <li key={index}>
                 <img src={track.album.cover_big} alt={track.album.title} />
                 <div>
@@ -64,7 +44,7 @@ function Tracks({ tracks, option }) {
                 </div>
                 <div className="combo-btn">
                   <button type="button" onClick={() => changeTrackToFavoriteList(track)}>{label}</button>
-                  <button id="audio" type="button" onClick={() => toHearTrack(track)}>⏯</button>
+                  <Control src={track.preview}/>
                   <button type="button" onClick={() => window.open(track.link)}><img src={logodeezer} alt="Ouça no Deezer"/></button>
                 </div>
               </li>

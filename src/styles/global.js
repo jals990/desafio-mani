@@ -10,6 +10,7 @@ export default createGlobalStyle`
     --dark: #090c15;
     --yellow: #ff9e43;
     --green: #04d361;
+    --red: #e7202d;
   }
   
   *{
@@ -45,10 +46,26 @@ export default createGlobalStyle`
 
   .navigation {
     width: 50vw;  
-    height: 30px;
+    height: 60px;
     background: var(--text-title);
     color: var(--white);
+    -webkit-box-shadow: 0 2px -14px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px -14px 0 rgba(0, 0, 0, 0.2);
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    button {
+      width: 120px;
+      margin: 0 12px;
+      color: var(--dark);
+      border: none;
+      border-radius: 4px;
+      padding: 4px;
+      background: var(--green);
+    }
+    
     @media (max-width: 768px){
       width: 500px;
     }
@@ -56,6 +73,18 @@ export default createGlobalStyle`
     @media (max-width: 426px){
       width: 100%;
     }
+  }
+
+  .svg-red{
+    color: var(--red);
+  }
+
+  .svg-green{
+    color: var(--green);
+  }
+
+  .svg-yellow{
+    color: var(--yellow);
   }
 
 `;

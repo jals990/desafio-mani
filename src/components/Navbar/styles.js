@@ -16,58 +16,17 @@ export const Container = styled.div`
   @media (max-width: 426px){
     width: 100%;
   }
-  
 
-  form > button{
-    background: var(--yellow);
-    &:nth-child(2){
-      background: var(--green);
-    }
-  }
-
-  @media (max-width: 376px){
-    form > button {
-      width: 90px;
-      margin: 0 3px;
-    }
-    form > input {
-      width: 90px;
-      margin: 0 3px;
-    }
-  }
-
-  button {
-    width: 120px;
-    margin: 0 12px;
-    color: var(--dark);
-    border: none;
-    border-radius: 4px;
-    padding: 4px;
-  }
-
-  input{
-    border: none;
-    border-radius: 4px;
-    padding: 4px;
+  img {
+    width: 200px;
     margin: 0 12px;
   }
 
-  > div {
-    height: 70px;
-    margin: 24px 0;
-    
+  @media (max-width: 426px){
     img {
-      width: 200px;
-      margin: 0 12px;
+      width: 45%;
+      margin: 0 6px;
     }
-
-    @media (max-width: 426px){
-      img {
-        width: 45%;
-        margin: 0 6px;
-      }
-    }
-
   }
 
 `;
