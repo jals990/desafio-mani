@@ -73,7 +73,7 @@ $ yarn start
 Made with 🚀 by Juarez Silva ✌🏾
 ```
 
-## 🚀 Disclaimer
+## 👀 Disclaimer
 
 No desafio havia sido solicitado a utilização de NextJs e testes unitários e de integração. Eu não sei desenvolver testes, já o NextJs até sei a estrutura e conheço os caminhos para desenvolver uma aplicação web, porém não havia utilizando NextJs com Redux, algo que sem o Redux deixaria a aplicação "deficiente".
 
