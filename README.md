@@ -26,6 +26,10 @@
   <img alt="GitHub" src="https://img.shields.io/github/license/jals990/desafio-mani?color=%23FF9000">
 </p>
 
+![Screenshot](screenshot.png)
+
+- [Link AWS](https://manipulae.kairoslab.tech)
+
 ## 🧑🏽‍💻 Sobre o projeto
 
 Foi desenvolvido um micro portal, onepage onde visualização das principais músicas no momento do Deezer, permitindo adicionar em uma lista de favoritos e pesquisar músicas.
