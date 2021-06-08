@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <img alt="Logo" src="https://web.manipulae.com.br/_next/static/images/logo@2x-aefbf3fe777b1b64334b5a2724597f60.png" width="200px">
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center">
+  Desafio Front Pleno ❤️‍🩹 Manipulaê
+</h3>
 
-## Available Scripts
+<p align="center">WebApp consumindo API Deezer.</p>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="https://www.linkedin.com/in/juarezsilva/" target="_blank" rel="noopener noreferrer">
+    <img alt="Made by" src="https://img.shields.io/badge/made%20by-juarez%20silva-%23FF9000">
+  </a>
 
-### `yarn start`
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/jals990/desafio-mani?color=%23FF9000">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <a href="https://github.com/jals990/desafio-mani/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/jals990/desafio-mani?color=%23FF9000">
+  </a>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  <a href="https://github.com/jals990/desafio-mani/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/jals990/desafio-mani?color=%23FF9000">
+  </a>
 
-### `yarn test`
+  <img alt="GitHub" src="https://img.shields.io/github/license/jals990/desafio-mani?color=%23FF9000">
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🧑🏽‍💻 Sobre o projeto
 
-### `yarn build`
+Foi desenvolvido um micro portal, onepage onde visualização das principais músicas no momento do Deezer, permitindo adicionar em uma lista de favoritos e pesquisar músicas.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Detalhes do desafio, clique aqui: [Desafio](https://github.com/manipulaeHealth/desafio-front-pleno/blob/main/README.md)<br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Tecnologias
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Tecnologias utilizadas na construção desta API
 
-### `yarn eject`
+- [Styled Components](https://github.com/styled-components/styled-components)
+- [React](https://reactjs.org)
+- [Axios](https://github.com/axios/axios)
+- [Redux](https://github.com/topics/redux)
+- [Redux-Saga](https://github.com/redux-saga/redux-saga)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 💻 Let's Go
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Para rodar em sua máquina localmente**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+# Clone o projeto e acesso o diretório para utilzação
+$ git clone https://github.com/jals990/desafio-mani.git && cd desafio-mani
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+# Ronomeie o arquivo .env.example para apenas .env
+# Preencha as variáveis 
+REACT_APP_NODE_ENV=
+REACT_APP_API_URL=
+```
 
-## Learn More
+A API do Deezer é pública não necessitando de credenciais<br />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Próximos passos**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# Instale as dependências
+$ yarn
 
-### Code Splitting
+# Para iniciar a aplicação execute o comando abaixo
+$ yarn start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# 🚀 WebApp no ar!
+Made with 🚀 by Juarez Silva ✌🏾
+```
 
-### Analyzing the Bundle Size
+## 🚀 Disclaimer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+No desafio havia sido solicitado a utilização de NextJs e testes unitários e de integração. Eu não sei desenvolver testes, já o NextJs até sei a estrutura e conheço os caminhos para desenvolver uma aplicação web, porém não havia utilizando NextJs com Redux, algo que sem o Redux deixaria a aplicação "deficiente".
 
-### Making a Progressive Web App
+Comecei a desenvolver porém não consegui evoluir com alguns pontos, subi ela mesmo que incompleta nesse link  para que possa ser analisada minha evolução com o desafio.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Desafio com NextJs](https://github.com/jals990/mani-beats)<br />
